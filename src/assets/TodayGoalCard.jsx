@@ -1,6 +1,7 @@
 import React from 'react'
 import { useModal } from "./ModalContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Button from './Button';
 
 
 function TodayGoalCard({ borderColor, statusColor, titleColor, title }) {
@@ -62,12 +63,7 @@ function TodayGoalCard({ borderColor, statusColor, titleColor, title }) {
                         </svg>
                     </div>
 
-                    <button
-                        className={`${statusColor}1 hover:${statusColor}2 text-white p-2 rounded-full w-2/5`}
-                        onClick={() => navigate("/Timing")}
-                    >
-                        شروع
-                    </button>
+                    <Button onClick={() => navigate("/Timing")} bgColor={statusColor} w="2/5" p="2">شروع</Button>
                 </div>
             </div>
         </>

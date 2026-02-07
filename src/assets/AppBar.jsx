@@ -1,12 +1,32 @@
 import React from "react";
 import DateAndTime from "./DateAndTime";
+import Button from './Button';
+
 
 function AppBar() {
   return (
     <div>
       <div className="bg-sky-800 w-full flex fixed justify-between rounded-none px-2 py-1 z-50 shadow-lg">
         <div className="flex items-center justify-start w-full">
-          <div className="size-8 blue1 hover:blue2 flex justify-center items-center group">
+<Button bgColor="blue" s="2" p="1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-7"
+            >
+              <path
+                className="stroke-gray-200 group-hover:stroke-white"
+                s
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+          </Button>
+          <Button bgColor="blue" s="2" p="1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -28,25 +48,9 @@ function AppBar() {
                 d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
               />
             </svg>
-          </div>
-          <div className="size-8 blue1 hover:blue2 flex justify-center items-center group">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-7"
-            >
-              <path
-                className="stroke-gray-200 group-hover:stroke-white"
-                s
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              />
-            </svg>
-          </div>
+          </Button>
+          
+
         </div>
         <div className="flex flex-col text-white items-end justify-center">
           <span className="text-2xl font-extrabold">

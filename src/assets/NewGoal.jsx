@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useModal } from "./ModalContext";
 import { Link } from "react-router-dom";
 import AppBar from "./AppBar";
 import BackButton from "./BackButton";
+import TitleColorPicker from "./TitleColorPicker";
+import Button from './Button';
+
 
 function NewGoal() {
   const { showModal } = useModal();
@@ -36,7 +39,7 @@ function NewGoal() {
       if (newTask.title)
         showModal(
           <p>
-            رفتی تو کار <span className={newTask.color}>{newTask.title}؛ </span>
+            رفتی تو کار <span className={`text-${newTask.color}-500`}>{newTask.title}؛ </span>
             موفق باشی!
           </p>
         );
@@ -58,33 +61,19 @@ function NewGoal() {
             <input
               id="goalname"
               type="text"
-              className={`border-none w-2/4 h-3/4 focus:border-none focus:outline-none ${goalColor}`}
+              className={`border-none w-2/4 h-3/4 focus:border-none focus:outline-none text-${newTask.color}-500`}
               placeholder="عنوان هدف..."
               name="title"
               value={newTask.title}
               onChange={taskHandler}
             />
             <div className="w-2/4 flex justify-end items-center p-3 gap-1">
-              <div
-                onClick={() => handleColorClick("text-blue-500")}
-                className="goalColor bg-blue-500 hover:bg-blue-600 w-5 h-5"
-              ></div>
-              <div
-                onClick={() => handleColorClick("text-red-500")}
-                className="goalColor bg-red-500 hover:bg-red-600 w-5 h-5"
-              ></div>
-              <div
-                onClick={() => handleColorClick("text-yellow-500")}
-                className="goalColor bg-yellow-500 hover:bg-yellow-600 w-5 h-5"
-              ></div>
-              <div
-                onClick={() => handleColorClick("text-green-500")}
-                className="goalColor bg-green-500 hover:bg-green-600 w-5 h-5"
-              ></div>
-              <div
-                onClick={() => handleColorClick("text-purple-500")}
-                className="goalColor bg-purple-500 hover:bg-purple-600 w-5 h-5"
-              ></div>
+              <TitleColorPicker onClick={() => handleColorClick("blue")} color="blue" />
+              <TitleColorPicker onClick={() => handleColorClick("red")} color="red" />
+              <TitleColorPicker onClick={() => handleColorClick("yellow")} color="yellow" />
+              <TitleColorPicker onClick={() => handleColorClick("green")} color="green" />
+              <TitleColorPicker onClick={() => handleColorClick("purple")} color="purple" />
+
             </div>
           </div>
           <textarea
@@ -117,12 +106,9 @@ function NewGoal() {
               />
             </div>{" "}
           </div>
-          <button
-            className="blue1 hover:blue2 text-white p-2 rounded-full w-24"
-            onClick={addHandler}
-          >
-            برو بریم
-          </button>
+
+          <Button onClick={addHandler} bgColor="blue" w="24" p="2">برو بریم</Button>
+
           <div className="bg-gray-100 mt-5 w-full p-4 text-black text-center">
             <h2>آخرین هدف‌ها:</h2>
             <div className="p-3 flex flex-col gap-3 text-right">

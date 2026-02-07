@@ -1,7 +1,11 @@
-import React from "react";
+
 import { useState } from "react";
 import AppBar from "./AppBar";
 import BackButton from "./BackButton";
+import TitleColorPicker from "./TitleColorPicker";
+import Button from './Button';
+
+
 
 function GoalManager() {
   const [goalColor, setGoalColor] = useState(null);
@@ -56,26 +60,11 @@ function GoalManager() {
               onChange={taskHandler}
             />
             <div className="w-2/4 flex justify-end items-center p-3 gap-1">
-              <div
-                onClick={() => handleColorClick("text-blue-500")}
-                className="goalColor bg-blue-500 hover:bg-blue-600 w-5 h-5"
-              ></div>
-              <div
-                onClick={() => handleColorClick("text-red-500")}
-                className="goalColor bg-red-500 hover:bg-red-600 w-5 h-5"
-              ></div>
-              <div
-                onClick={() => handleColorClick("text-yellow-500")}
-                className="goalColor bg-yellow-500 hover:bg-yellow-600 w-5 h-5"
-              ></div>
-              <div
-                onClick={() => handleColorClick("text-green-500")}
-                className="goalColor bg-green-500 hover:bg-green-600 w-5 h-5"
-              ></div>
-              <div
-                onClick={() => handleColorClick("text-purple-500")}
-                className="goalColor bg-purple-500 hover:bg-purple-600 w-5 h-5"
-              ></div>
+              <TitleColorPicker onClick={() => handleColorClick("blue")} color="blue" />
+              <TitleColorPicker onClick={() => handleColorClick("red")} color="red" />
+              <TitleColorPicker onClick={() => handleColorClick("yellow")} color="yellow" />
+              <TitleColorPicker onClick={() => handleColorClick("green")} color="green" />
+              <TitleColorPicker onClick={() => handleColorClick("purple")} color="purple" />
             </div>
           </div>
           <textarea
@@ -108,12 +97,9 @@ function GoalManager() {
               />
             </div>{" "}
           </div>
-          <button
-            className="blue1 hover:blue2 text-white p-2 rounded-full w-24"
-            onClick={addHandler}
-          >
-            ویرایش
-          </button>
+
+          <Button onClick={addHandler} bgColor="blue" w="24" p="2">ویرایش</Button>
+
         </div>
       </div>
     </>

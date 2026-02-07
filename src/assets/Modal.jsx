@@ -1,4 +1,4 @@
-// Modal.jsx
+
 import { useModal } from "./ModalContext";
 import { motion } from "framer-motion";
 import { useEffect } from "react";

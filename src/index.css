@@ -1,83 +1,198 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-}
-
-* {
-  font-family: vazirmatn;
-}
-
-html,
-body {
+  padding: 0;
+  margin: 0;
+  color: black;
+  gap: 2rem;
   overflow-x: hidden;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none;
 }
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-sky-100 to-cyan-100;
+    /* @apply py-4; */
+  }
+  h2,
+  h3,
+  h4 {
+    @apply m-0;
+  }
+  li {
+    @apply cursor-pointer;
+  }
+  p {
+    @apply cursor-default;
+  }
+  button,
+  .button {
+    @apply bg-black text-white xl:bg-slate-600 xl:text-gray-300 xl:hover:bg-black hover:text-white rounded-3xl p-1 w-20;
+  }
+  .toggle {
+    @apply bg-black;
+  }
+  button,
+  .button,
+  .icon {
+    @apply transition-all duration-200;
+  }
+  input {
+    @apply text-black p-2 outline-none cursor-text;
+  }
+  textarea {
+    @apply rounded-full;
+  }
+  header h1 {
+    @apply text-xl sm:text-2xl md:text-3xl font-extrabold;
   }
 
-  h1 {
-    @apply text-3xl;
+  article h2 {
+    @apply font-bold text-2xl;
   }
-
-  h2 {
-    @apply text-2xl;
-    font-weight: 500;
+  article h3 {
+    @apply text-xl font-semibold;
   }
-
+  article h2,
   h3 {
+    @apply mt-2;
+  }
+  article p {
+    @apply text-justify;
+  }
+  li {
+    @apply border-b-2 border-gray-300 cursor-pointer;
+  }
+  ul,
+  li:last-child {
+    @apply border-none;
+  }
+  img {
+    @apply rounded-lg;
+  }
+  .menu li {
     @apply text-xl;
   }
-
-  h4 {
-    @apply text-sm font-bold text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap w-full block;
+  .borderTest {
+    @apply border-4 border-sky-500;
+  }
+  .songBoxContainer {
+    @apply bg-slate-100 shadow-sm;
+  }
+  .songBoxContainer span {
+    @apply md:text-xl font-semibold;
+  }
+  /* .songBoxContainer h2 {
+    @apply 
+  } */
+  .songBoxTitle {
+    @apply font-bold text-xl md:text-2xl xl:text-3xl bg-black w-full text-white flex items-center justify-between px-3 md:px-16 lg:px-4 lg:absolute;
   }
 
-  div,
-  input[type="text"],
-  textarea {
-    @apply rounded-3xl;
+  .icon {
+    @apply fill-black md:hover:bg-slate-200 rounded-full overflow-visible p-1 size-7 box-content cursor-pointer;
   }
-
-  input[type="text"],
-  textarea {
-    @apply p-3;
+  .playlistItem {
+    @apply m-1 p-2 flex justify-between font-semibold md:text-lg lg:text-xl;
   }
-
-  a {
-    @apply text-sky-700;
+  .NavBar {
+    @apply bg-white w-full h-12 fixed top-0 flex p-3 shadow-xl gap-2 justify-between items-center z-50;
   }
-
-  .blue1 {
-    @apply bg-gradient-to-br from-sky-300 to-blue-500 transition-all duration-500 ease-in-out;
+  .NavBar span {
+    @apply font-extrabold text-xl;
   }
-
-  .blue2 {
-    @apply bg-gradient-to-br from-sky-400 to-blue-600 transition-all duration-500 ease-in-out;
+  .songDetails span {
+    @apply font-semibold md:text-xl lg:text-2xl;
   }
-
-  .red1 {
-    @apply bg-gradient-to-br from-red-600 to-red-900;
+  .blogPost h1 {
+    @apply font-bold;
   }
-
-  .red2 {
-    @apply bg-gradient-to-br from-red-700 to-red-950;
+  .blogPost div {
+    @apply rounded-lg;
   }
-
-  .gray1 {
-    @apply bg-gradient-to-br from-gray-300 to-gray-600;
+  .blogList span {
+    @apply font-bold;
   }
-
-  .gray2 {
-    @apply bg-gradient-to-br from-gray-400 to-gray-800;
+  .player h2 {
+    @apply font-bold text-2xl md:text-3xl;
   }
-}
-
-.goal-input {
-  padding: 0 !important;
-  display: flex;
+  .player h3 {
+    @apply font-semibold text-xl;
+  }
+  .player h4 {
+    @apply font-medium text-lg;
+  }
+  .sign h1 {
+    @apply font-bold text-2xl;
+  }
+  .input input {
+    @apply overflow-hidden;
+  }
+  .input svg {
+    @apply size-6;
+  }
+  .input {
+    @apply bg-gray-300 rounded-lg flex w-full items-center justify-center;
+  }
+  .sign span {
+    @apply text-slate-500 hover:text-black transition-all duration-200;
+  }
+  .user h2 {
+    @apply text-xl font-bold;
+  }
+  .user h3 {
+    @apply text-lg;
+  }
+  .news h2 {
+    @apply font-bold cursor-default;
+  }
+  .news span {
+    @apply text-sm;
+  }
+  .info {
+    @apply w-full h-full z-10 bg-black/80 fixed flex items-center justify-center p-5 transition-all duration-300;
+  }
+  .info h2 {
+    @apply text-xl mb-2;
+  }
+  .playerTool .icon {
+    @apply fill-gray-500 hover:fill-black transition-colors duration-200 md:size-10;
+  }
+  .profilePicture {
+    @apply bg-blue-600 rounded-lg;
+  }
+  .socialMedia .icon {
+    @apply fill-white hover:size-9 hover:bg-transparent;
+  }
+  .modal svg {
+    @apply fill-white size-3;
+  }
+  .accordion span {
+    @apply md:text-xl;
+  }
 }

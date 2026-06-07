@@ -16,14 +16,20 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "formik": "^2.4.9",
     "framer-motion": "^12.23.24",
+    "immer": "^11.1.4",
     "jalaali-js": "^1.2.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-error-boundary": "^6.1.1",
+    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.9.5",
     "recharts": "^3.6.0",
     "tailwindcss-rtl": "^0.9.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "use-immer": "^0.11.0",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

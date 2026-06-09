@@ -1,7 +1,9 @@
-import { NavLink } from "..";
+import { NavLink, useLocation } from "..";
 function PlaylistItem({ song, playlistTitle }) {
   // const prevSong = getPrevSong(playlist, song.id);
   // console.log(prevSong);
+  const location = useLocation();
+
   return (
     <li>
       <NavLink

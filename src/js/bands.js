@@ -5,6 +5,7 @@ const bands = [
     Genre: "Hard rock, gothic rock, love metal",
     Released: 1995,
     Nationality: "Finnish",
+    Artwork: "him",
   },
   {
     id: 2,

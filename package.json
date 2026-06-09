@@ -1,17 +1,15 @@
 {
-  "homepage": "https://minumaalek.github.io/timing-hero/#",
+  "homepage": "https://minumaalek.github.io/electricmusic/#",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build",
-  "name": "timing-hero",
+  "name": "electricmusic",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "react-scripts start",
     "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

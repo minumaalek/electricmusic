@@ -27,7 +27,7 @@ function Menu({ onClose }) {
 
   if (!hideMenu)
     return (
-      <div className="fixed h-screen w-screen left-0 top-0 ">
+      <div className="fixed h-screen w-screen left-0 top-0">
         <div className="w-full h-full bg-white flex flex-col py-14 px-5">
           <ul className="menu">{navItems}</ul>
         </div>

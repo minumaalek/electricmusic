@@ -1,5 +1,12 @@
 import { getPostByURL } from "../../js/blogs";
-import { Comments, useEffect, useState, useRef, useParams } from "../..";
+import {
+  Comments,
+  useEffect,
+  useState,
+  useRef,
+  useParams,
+  Helmet,
+} from "../..";
 import { useImmer } from "use-immer";
 import Breadcrumb from "../../components/Breadcrumb";
 
@@ -48,9 +55,11 @@ function BlogPost() {
   if (!post) {
     return <div className="p-10">Loading...</div>;
   }
-
   return (
     <div className="blogPost flex flex-col min-h-screen bg-white">
+      <Helmet>
+        <title>{post.Title}</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col">
         <div className="h-10 w-full p-2 ">
           <Breadcrumb />

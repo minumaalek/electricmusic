@@ -45,6 +45,7 @@ export {
   useSearchParams,
   Navigate,
 } from "react-router-dom";
+export { Helmet } from "react-helmet-async";
 
 //custom hooks
 export { usePlaylist } from "./contexts/PlaylistsContext";

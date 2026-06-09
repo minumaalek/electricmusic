@@ -11,7 +11,6 @@ import {
   SongBox,
   useParams,
 } from "..";
-import hope from "../assets/artworks/all-hope-is-gone.png";
 
 function Player() {
   const [play, setPlay] = useState(false);
@@ -68,6 +67,14 @@ function Player() {
 
   return (
     <div className="h-screen w-screen flex flex-col bg-black text-white justify-center gap-20 items-center player lg:grid grid-cols-2 place-content-center place-items-center xl:p-80">
+      {!song.Free && (
+        <div className="bg-gray-600/95 w-full h-full fixed z-5 justify-center items-center flex flex-col gap-3">
+          <span className="text-xl">
+            You must be a pro user to play this song.
+          </span>
+        </div>
+      )}
+
       <div className="size-72 p-6 md:p-0 md:size-96 w-full flex flex-col items-center justify-between mb-10 md:mb-0">
         <SongBox Artwork={Artwork} />
         <div className="w-full bg-white h-2 "></div>
@@ -78,14 +85,18 @@ function Player() {
           <h3>{Artist}</h3>
           <h4>{Album}</h4>
         </div>
-        <div className="bg-white size-52 md:size-72 rounded-full flex flex-col justify-between items-center p-3 playerTool">
+        <div className="bg-white size-52 md:size-72 rounded-full flex flex-col justify-between items-center p-3 playerTool z-10">
           <LikeIcon />
           <div className="w-full flex justify-between items-center">
             <div onClick={prevSongHandler}>
               <PrevIcon />
             </div>
             <div className="bg-black size-24 md:size-36 rounded-full flex items-center justify-center">
-              <div onClick={() => setPlay((prev) => !prev)}>
+              <div
+                onClick={() => {
+                  if (song.Free) setPlay((prev) => !prev);
+                }}
+              >
                 {play ? <PlayIcon white /> : <PauseIcon white />}
               </div>
             </div>

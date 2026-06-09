@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 
 const ErrorFallback = ({ error, resetBoundary }) => {
@@ -21,10 +22,10 @@ const ErrorFallback = ({ error, resetBoundary }) => {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <App />
       </ErrorBoundary>
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>,
 );

@@ -6,7 +6,7 @@ import {
   useCallback,
 } from "react";
 import { getSongs } from "../js/songs";
-import noArt from "../assets/artworks/noArt.png";
+import noArt from "../assets/artworks/noArt.webp";
 
 const PlaylistContext = createContext();
 
@@ -41,9 +41,9 @@ export const PlaylistProvider = ({ children }) => {
         playlist: {
           Title: "Mood",
           Items: [
-            { id: 1, Track: "Relaxing", Free: true },
-            { id: 2, Track: "Happy" },
-            { id: 3, Track: "Sad" },
+            { id: 1, Track: "Relaxing", Artwork: "relaxing" },
+            { id: 2, Track: "Happy", Artwork: "happy" },
+            { id: 3, Track: "Sad", Artwork: "sad" },
           ],
           function: getPlaylistByMood,
         },
@@ -53,9 +53,9 @@ export const PlaylistProvider = ({ children }) => {
         playlist: {
           Title: "Top_bands",
           Items: [
-            { id: 1, Track: "H.I.M" },
-            { id: 2, Track: "The 69 eyes" },
-            { id: 3, Track: "Ghost" },
+            { id: 1, Track: "H.I.M", Artwork: "him" },
+            { id: 2, Track: "The 69 eyes", Artwork: "the-69-eyes" },
+            { id: 3, Track: "Ghost", Artwork: "ghost" },
           ],
           function: getPlaylistByArtist,
         },
@@ -90,7 +90,8 @@ export const PlaylistProvider = ({ children }) => {
     });
   const getArtwork = (artwork) => {
     if (artwork)
-      return new URL(`../assets/artworks/${artwork}.png`, import.meta.url).href;
+      return new URL(`../assets/artworks/${artwork}.webp`, import.meta.url)
+        .href;
     else return noArt;
   };
   const getPrevNextSong = (currentPlaylist, currentSongID) => {

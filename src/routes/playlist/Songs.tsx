@@ -17,7 +17,7 @@ function Songs() {
   const query = searchParams.get("search") || "";
 
   const [isPending, startTransition] = useTransition();
-  const [filteredSongs, setFilteredSongs] = useState([]);
+  // const [filteredSongs, setFilteredSongs] = useState([]);
 
   const { getSongsByPlaylist, getPlaylistByTitle } = usePlaylist();
 
@@ -31,27 +31,35 @@ function Songs() {
     [playlist, playlistTitle, getPlaylistByTitle],
   );
 
-  useEffect(() => {
-    setFilteredSongs(songs);
-  }, [songs]);
+  // useEffect(() => {
+  //   setFilteredSongs(songs);
+  // }, [songs]);
 
-  let deBounce;
+  // let deBounce;
 
-  useEffect(() => {
-    startTransition(() => {
-      if (!query) {
-        setFilteredSongs(songs);
-      } else {
-        clearTimeout(deBounce);
-        deBounce = setTimeout(() => {
-          const filtered = songs.filter((song) => {
-            return song.Track.toLowerCase().includes(query.toLowerCase());
-          });
-          setFilteredSongs(filtered);
-        }, 1000);
-      }
-    });
-  }, [query, songs]);
+  // useEffect(() => {
+  //   startTransition(() => {
+  //     if (!query) {
+  //       setFilteredSongs(songs);
+  //     } else {
+  //       clearTimeout(deBounce);
+  //       deBounce = setTimeout(() => {
+  //         const filtered = songs.filter((song) => {
+  //           return song.Track.toLowerCase().includes(query.toLowerCase());
+  //         });
+  //         setFilteredSongs(filtered);
+  //       }, 1000);
+  //     }
+  //   });
+  // }, [query, songs]);
+
+  const filteredSongs = useMemo(() => {
+    if (!query) return songs;
+
+    return songs.filter((song) =>
+      song.Track.toLowerCase().includes(query.toLowerCase()),
+    );
+  }, [songs, query]);
 
   const accordionHandler = useCallback(
     (arg) => {

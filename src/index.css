@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Ubuntu, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -111,7 +111,7 @@ html {
     @apply 
   } */
   .songBoxTitle {
-    @apply font-bold text-xl md:text-2xl xl:text-3xl bg-black w-full text-white flex items-center justify-between px-3 md:px-16 lg:px-4 lg:absolute;
+    @apply font-bold text-xl md:text-2xl xl:text-3xl bg-black w-full h-12 text-white flex items-center justify-between px-3 md:px-16 lg:px-4 lg:absolute;
   }
 
   .icon {
